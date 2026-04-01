@@ -1,0 +1,105 @@
+.filter-sidebar {
+  width: var(--sidebar-width);
+  flex-shrink: 0;
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-lg);
+  height: fit-content;
+  position: sticky;
+  top: calc(var(--navbar-height) + var(--space-lg));
+  max-height: calc(100vh - var(--navbar-height) - 48px);
+  overflow-y: auto;
+}
+.filter-sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-lg);
+}
+.filter-sidebar-title {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0;
+}
+.filter-clear-btn {
+  background: none;
+  border: none;
+  color: var(--primary);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  font-family: var(--font-body);
+}
+.filter-clear-btn:hover { color: var(--primary-light); }
+
+.filter-section {
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-lg);
+  border-bottom: 1px solid var(--glass-border);
+}
+.filter-section:last-child { border-bottom: none; margin-bottom: 0; }
+.filter-section-title {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: var(--space-sm);
+}
+
+/* Gender buttons */
+.filter-gender-btns { display: flex; gap: var(--space-xs); }
+.filter-gender-btn {
+  flex: 1;
+  padding: 7px 8px;
+  background: var(--surface);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  font-family: var(--font-body);
+}
+.filter-gender-btn:hover { border-color: var(--primary); color: var(--text-primary); }
+.filter-gender-btn.active { background: rgba(194,24,91,0.15); border-color: var(--primary); color: var(--primary-light); }
+
+/* Age inputs */
+.filter-age-row { display: flex; align-items: center; gap: var(--space-sm); }
+.filter-age-input { text-align: center; flex: 1; padding: 10px; }
+.filter-age-sep { color: var(--text-muted); font-size: 0.9rem; }
+
+/* Checkboxes */
+.filter-checkboxes { display: flex; flex-direction: column; gap: 8px; max-height: 200px; overflow-y: auto; }
+.filter-checkbox {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: var(--transition);
+  padding: 3px 0;
+}
+.filter-checkbox:hover { color: var(--text-primary); }
+.filter-checkbox input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--primary);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* Tags */
+.filter-tags { display: flex; flex-wrap: wrap; gap: var(--space-xs); }
+
+@media (max-width: 1024px) {
+  .filter-sidebar {
+    width: 100%;
+    position: static;
+    max-height: none;
+  }
+}
